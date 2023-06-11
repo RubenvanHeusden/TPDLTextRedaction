@@ -35,9 +35,8 @@ cd TPDLTextRedaction
    ```
    pip install - requirements.txt
    ```
-7. Running Jupyter Notebook
-   If you haven't worked with Jupyter Notebook yet, you should set up jupyter so that you can select the right kernel and 
-   work with the packages we just installed.
+7. Running Jupyter Notebook:
+   If you haven't worked with Jupyter Notebook yet, you should set up jupyter so that you can select the right kernel and work with the packages we just installed.
    ```
    ipython kernel install --name "text_redaction_env" --user
    ```
