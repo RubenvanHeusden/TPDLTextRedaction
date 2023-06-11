@@ -13,7 +13,7 @@ To be able to run the code and experiments in this repository, follow these step
 
 2. Clone this repository:
 ```
-git clone https://github.com/RubenvanHeusden/TPDLTextRedaction/edit/main/README.md
+git clone https://github.com/RubenvanHeusden/TPDLTextRedaction.git
 ```
 3. Navigate to the project directory:
 ```
