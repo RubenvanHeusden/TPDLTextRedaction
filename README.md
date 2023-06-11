@@ -21,14 +21,14 @@ cd TPDLTextRedaction
 ```
 4. Create a new Anaconda environment:
 
-   Open a terminal (or Anaconda Prompt on Windows) and run the following command:
+   Open a terminal (or Anaconda Prompt on Windows) and run the following command, which installs the requirement according to the environment file we provid:
    ```
    conda env create -f environment.yml
    ```
    
 5. Activate the environment:
   ```
-  conda activate myproject_env
+  conda activate text_redaction_env
   ```
 6. Alternative using pip
    If you prefer using pip, you can also install the environment using the requirements file we supplied
