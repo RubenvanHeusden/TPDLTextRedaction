@@ -21,7 +21,7 @@ cd TPDLTextRedaction
 ```
 4. Create a new Anaconda environment:
 
-   Open a terminal (or Anaconda Prompt on Windows) and run the following command, which installs the requirement according to the environment file we provid:
+   Open a terminal (or Anaconda Prompt on Windows) and run the following command, which installs the requirements according to the environment file we provide:
    ```
    conda env create -f environment.yml
    ```
@@ -33,7 +33,7 @@ cd TPDLTextRedaction
 6. Alternative using pip
    If you prefer using pip, you can also install the environment using the requirements file we supplied
    ```
-   pip install - requirements.txt
+   pip install -r requirements.txt
    ```
 7. Running Jupyter Notebook:
    If you haven't worked with Jupyter Notebook yet, you should set up jupyter so that you can select the right kernel and work with the packages we just installed.
