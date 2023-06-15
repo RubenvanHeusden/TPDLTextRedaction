@@ -2,12 +2,13 @@ name: text_redaction_env
 channels:
   - defaults
 dependencies:
-  - jupyter
   - opencv
-  - pytesseract
   - pandas
-  - tqdm
   - matplotlib
-  - shapely
   - pip
+  - shapely
+  - tqdm
+  - jupyter
+  - pytesseract
+  - pdf2image
 prefix: /Users/rubenvanheusden/anaconda3/envs/text_redaction_env
