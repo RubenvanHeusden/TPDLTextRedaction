@@ -1,6 +1,7 @@
 # TPDLTextRedaction
 
-This repository contains the data and notebooks for the Short paper submission 'Detection of Redacted Text in Legal Documents' to the TPDL conference.
+This repository contains the data and notebooks for the Short paper submission 'Detection of Redacted Text in Legal Documents' to the 
+2023 Edition of the TPDL conference.
 
 ## Installation
 
@@ -49,4 +50,5 @@ cd TPDLTextRedaction
     - `data.csv`: Contains the data with the labels of the different pages
     - `images`: contains the PNG images of the pages.
     - `gold_standard-json`: Contains the json file of the manual annotations from the research.
-
+- `scripts`: Directory containing scripts to run the detection algorithm automatically on a variety of inputs, with automatic PNG conversion
+- `source/`: Directory with the complete algorithm as a Python class.
