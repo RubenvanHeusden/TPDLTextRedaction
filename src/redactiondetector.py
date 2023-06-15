@@ -212,7 +212,7 @@ class RedactionDetector:
                     (contour_bottom[1] - contour_top[1]) < (contour_right[0] - contour_left[0])):
                 final_contours.append(contour)
                 # add the contours into the final image
-                cv2.drawContours(final_image, [contour], -1, (0, 255, 0), -1)
+                cv2.drawContours(final_image, [contour], -1, (0, 255, 0), thickness=3)
                 cv2.drawContours(final_contour_image, [contour], -1, (255, 255, 255), -1)
 
                 left_text_boundary.append(contour_left[0])
@@ -230,7 +230,7 @@ class RedactionDetector:
 
 
     @staticmethod
-    def run_algorithm(input_image_path: str,
+    def run_algorithm(input_image_path_or_array: str,
                       text_pre_closing_kernel_size: tuple = (2, 2),
                       text_pre_guassian_blur_size: tuple = (3, 3),
                       box_pre_horizontal_closing_size: tuple = (1, 3),
@@ -260,14 +260,14 @@ class RedactionDetector:
         :param tesseract_confidence: integer specifying the confidence level for Tesseract to
         consider something to be text
         :param contour_opening_kernel_size: kernel size of the opening operation in the contour detection step.
-        :returns list of lists with the detected boxes, precentage of the words redacted, number of redacted regions
+        :returns final_image_withcontours, list of lists with the detected boxes, precentage of the words redacted, number of redacted regions
         """
-
-        input_image = RedactionDetector.load_image(input_image_path)
+        if isinstance(input_image_path_or_array, str):
+            input_image_path_or_array= RedactionDetector.load_image(input_image_path_or_array)
         # Do the preprocessing
-        image_text_pre = RedactionDetector.text_preprocessing(input_image, text_pre_closing_kernel_size)
+        image_text_pre = RedactionDetector.text_preprocessing(input_image_path_or_array, text_pre_closing_kernel_size)
 
-        image_box_pre = RedactionDetector.redaction_box_preprocessing(input_image,
+        image_box_pre = RedactionDetector.redaction_box_preprocessing(input_image_path_or_array,
                                                     box_pre_horizontal_closing_size,
                                                     box_pre_vertical_closing_size,
                                                     box_pre_bilat_filter_size,
@@ -280,7 +280,7 @@ class RedactionDetector:
         image_with_contours, contours = RedactionDetector.determine_contours(image_without_text, contour_opening_kernel_size)
         # final contouring filtering step
         final_image_with_contours, final_contour_image, final_contours, total_contour_area, total_text_area = \
-            RedactionDetector.filter_contours(input_image, contours, text_boundaries)
+            RedactionDetector.filter_contours(input_image_path_or_array, contours, text_boundaries)
 
         # Automatically calculate some statistics on the number of redacted boxes, and the total percentage of
         # the page that is redacted.
@@ -293,4 +293,4 @@ class RedactionDetector:
         percentage_redacted_words = ((total_contour_area / total_area) * 100) if total_contour_area else 0
         num_of_redacted_regions = len(final_contours)
 
-        return final_contours, percentage_redacted_words, num_of_redacted_regions
+        return final_image_with_contours, final_contours, percentage_redacted_words, num_of_redacted_regions

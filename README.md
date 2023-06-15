@@ -42,6 +42,14 @@ cd TPDLTextRedaction
    ipython kernel install --name "text_redaction_env" --user
    ```
    
+8. Additional Requirements
+   If you want to run the demo and convert PDF files yourself, you should first install `poppler` on your system.
+
+9. Running the Demo
+   To run the demo locally you need Poppler, and then you can run the command below from the `scripts` folder:
+   `python run_redaction_detector.py --pdf_path ../examples/Woo-verzoek_Geredigeerd.pdf --output_path demo_output.pdf`
+   Which will run the demo on the pdf in the `examples` directory and put an annotated version like the one on the live demo in the root folder of the directory. 
+
 ## Directory Structure
 
 - `notebooks/`: Contains Jupyter Notebook files.
@@ -51,4 +59,5 @@ cd TPDLTextRedaction
     - `images`: contains the PNG images of the pages.
     - `gold_standard.json`: Contains the json file of the manual annotations from the research.
 - `scripts`: Directory containing scripts to run the detection algorithm automatically on a variety of inputs, with automatic PNG conversion
-- `source/`: Directory with the complete algorithm as a Python class.
+- `src/`: Directory with the complete algorithm as a Python class.
+- `examples`: contains an example pdf for the demo
