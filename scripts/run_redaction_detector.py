@@ -14,7 +14,7 @@ from pdf2image import convert_from_path
 
 
 # Local imports
-from .src.redactiondetector import *
+from redactiondetector import *
 
 def convert_pdf_to_png(input_pdf_path: str):
 

@@ -58,6 +58,5 @@ cd TPDLTextRedaction
     - `data.csv`: Contains the data with the labels of the different pages
     - `images`: contains the PNG images of the pages.
     - `gold_standard.json`: Contains the json file of the manual annotations from the research.
-- `scripts`: Directory containing scripts to run the detection algorithm automatically on a variety of inputs, with automatic PNG conversion
-- `src/`: Directory with the complete algorithm as a Python class.
+- `scripts`: Directory containing scripts to run the detection algorithm automatically on a variety of inputs, with automatic PNG conversion, as well as a file containing the algorithm as a class for convenience
 - `examples`: contains an example pdf for the demo
