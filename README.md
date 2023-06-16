@@ -1,4 +1,4 @@
-# TPDLTextRedaction
+# Automatic Text Redaction Detector
 
 This repository contains the data and notebooks for the Short paper submission 'Detection of Redacted Text in Legal Documents' to the 
 2023 Edition of the TPDL conference.
