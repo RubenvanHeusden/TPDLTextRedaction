@@ -4,6 +4,7 @@ This repository contains the data and notebooks for the Short paper submission '
 2023 Edition of the TPDL conference.
 
 <img src="examples/redaction_example.png" alt="Example of text redaction" width="500" height="600">
+
 ## Installation
 
 To be able to run the code and experiments in this repository, follow these steps:
