@@ -51,6 +51,7 @@ cd TPDLTextRedaction
    To run the demo locally you need Poppler, and then you can run the command below from the `scripts` folder:
    `python run_redaction_detector.py --pdf_path ../examples/Woo-verzoek_Geredigeerd.pdf --output_path demo_output.pdf`
    Which will run the demo on the pdf in the `examples` directory and put an annotated version like the one on the live demo in the root folder of the directory. 
+   We have also included an enhancement to the algorithm with the `--exclude_tables` argument, which will use `image2table` to detect tables in pages, and skip these for redaction detection, as these often confuse the algorithm and can cause too much text to be labelled as redacted text. This is still disabled by default to be equal to the version in the paper, but can be enabled by passing `--exclude_tables True`.
 
 ## Directory Structure
 
